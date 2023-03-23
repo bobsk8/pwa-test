@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  public valShared: any;
+
   constructor(
     private route: ActivatedRoute
   ) {}
@@ -15,8 +17,7 @@ export class HomeComponent implements OnInit {
   public ngOnInit(): void {
     this.route.queryParams
     .subscribe(params => {
-      console.log('passou')
-      console.log(params);
+      this.valShared = params;
     }
   );
   }
